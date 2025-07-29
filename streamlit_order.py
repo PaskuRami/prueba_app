@@ -1,6 +1,13 @@
 import streamlit as st
+from PIL import Image 
 from futbol import cargar_partidos
 from texto import app_texto
+
+#Imagen logo pestaña navegación 
+img = Image.open("logo.png") 
+
+st.set_page_config(page_title='Mi APP', page_icon=img, layout="wide", initial_sidebar_state="collapsed") 
+
 
 def main():
     st.title("Aplicacion principal")

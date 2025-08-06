@@ -7,6 +7,8 @@ from auth.auth_manager import AuthManager
 from auth.jwt_utils import generate_token, decode_token
 
 from ui import dashboard #Make sure the dashboard module is imported correctly
+from . import main_menu
+
 auth_manager = AuthManager()
 
 def login_page():
@@ -25,6 +27,7 @@ def login_page():
                 dashboard.admin_dashboard()
             if token_data["role"] == "Gestion":
                 st.info("Rol Gestion")
+                main_menu.main_menu()
             else:
                 st.info("Role not supported yet.")
                 return
@@ -43,3 +46,4 @@ def login_page():
                 st.rerun() #Reload to enter the active session
             else:
                 st.error("Incorrect username or password")
+

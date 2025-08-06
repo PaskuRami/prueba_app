@@ -1,0 +1,10 @@
+#This file contains functions for securely hashing passwords using the bcrypt library
+
+import bcrypt
+
+def hash_password(password: str) -> str:
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(password.encode(), salt).decode()
+
+def verify_password(password: str, hashed: str) -> bool:
+    return bcrypt.checkpw(password.encode(), hashed.encode())

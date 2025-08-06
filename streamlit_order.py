@@ -1,5 +1,5 @@
-from ./ui import dashboard
-from ./ui import login
+from .ui import dashboard
+from .ui import login
 import streamlit as st
 import base64
 #Initial configuration
@@ -29,4 +29,5 @@ st.markdown(
 
 if __name__ == "__main__":
     login.login_page()   #If no token, show the login page
+
 

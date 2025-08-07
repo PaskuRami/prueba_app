@@ -7,7 +7,7 @@ from auth.auth_manager import AuthManager
 from auth.jwt_utils import generate_token, decode_token
 
 from ui import dashboard #Make sure the dashboard module is imported correctly
-from ui import streamlit_order
+from ui import viaje
 
 auth_manager = AuthManager()
 
@@ -26,8 +26,8 @@ def login_page():
             if token_data["role"] == "admin":
                 dashboard.admin_dashboard()
             if token_data["role"] == "Gestion":
-                st.info("Rol Gestion")
-                streamlit_order.main()
+                #st.info("Rol Gestion")
+                viaje.cargar_viaje()
             else:
                 st.info("Role not supported yet.")
                 return
@@ -46,6 +46,7 @@ def login_page():
                 st.rerun() #Reload to enter the active session
             else:
                 st.error("Incorrect username or password")
+
 
 
 

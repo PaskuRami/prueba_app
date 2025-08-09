@@ -29,8 +29,9 @@ def main():
         #pass
         viaje.cargar_viaje()
     elif choice == "Maleta":
-        maleta.cargar_texto()
+        maleta.maleta_viaje()
 
 if __name__ == '__main__':
 
     main()
+

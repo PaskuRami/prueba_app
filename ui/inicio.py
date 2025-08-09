@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image 
 from ui import viaje
 from ui import texto
+from ui import maleta
 from auth.jwt_utils import generate_token, decode_token
 
 #Imagen logo pestaña navegación 
@@ -13,7 +14,7 @@ st.set_page_config(page_title='Mi APP', page_icon=img, layout="wide", initial_si
 def main():
     st.title("Aplicacion principal")
     
-    menu=["Inicio","Viaje","Texto","Conocenos"]
+    menu=["Inicio","Viaje","Maleta","Conocenos"]
     token_data = decode_token(st.session_state["auth_token"])
     st.sidebar.success(f"Usuario: {token_data['username']} ({token_data['role']})")
     #Allows you to log out
@@ -27,8 +28,9 @@ def main():
     elif choice == "Viaje":
         #pass
         viaje.cargar_viaje()
-    elif choice == "Texto":
-        texto.app_texto()
+    elif choice == "Maleta":
+        maleta.cargar_texto()
 
 if __name__ == '__main__':
+
     main()

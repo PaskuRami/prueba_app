@@ -32,6 +32,6 @@ def main():
         maleta.maleta_viaje()
 
 if __name__ == '__main__':
-
     main()
+
 

@@ -1,15 +1,15 @@
-producto,unidades,kilos,litros,proveedor
-Azucar,,,,Pascual-Navarro
-Sal,,,,Pascual-Navarro
-Colacao,,,,Pascual-Navarro
-Aceite,,,,Pascual-Navarro
-Leche Entera,,,,Pascual-Navarro
-Leche Desnatada,,,,Pascual-Navarro
-Pastillas Lavavajillas,,,,Vera-Salvador
-Huevos,12,,,Vera-Salvador
-Leche Semidesnatada,,,1,Vera-Salvador
-Longanizas,12,,,Vera-Salvador
-Lomo,20,,,Vera-Salvador
-Cafe Capsulas,,,,Vera-Salvador
-Cafetera,,,,Vera-Salvador
-Longanizas Pascua,,,,Vera-Salvador
+producto,proveedor,unidades,kilos,litros
+Azucar,PascualNavarro,,,
+Sal,PascualNavarro,,,
+Colacao,PascualNavarro,,,
+Aceite,PascualNavarro,,,
+Leche Entera,PascualNavarro,,,
+Leche Desnatada,PascualNavarro,,,
+Pastillas Lavavajillas,VeraSalvador,,,
+Huevos,VeraSalvador,12,,
+Leche Semidesnatada,VeraSalvador,,1,
+Longanizas,VeraSalvador,12,,
+Lomo,VeraSalvador,20,,
+Cafe Capsulas,VeraSalvador,,,
+Cafetera,VeraSalvador,,,
+Longanizas Pascua,VeraSalvador,,,

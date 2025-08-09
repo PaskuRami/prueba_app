@@ -5,12 +5,12 @@ import plotly.express as px
 
 #Escribir en archivo csv
 def writing_on_csv(dataDict):
-    with open("./data/lista_viaje.csv", mode="w", newline='\n') as file:
+    with open("./data/maleta.csv", mode="w", newline='\n') as file:
         data = pd.DataFrame(dataDict)
         data.to_csv(file,index=False,escapechar="\r")
 
 def reading_from_csv():
-    with open("./data/lista_viaje.csv", mode="r") as file:
+    with open("./data/maleta.csv", mode="r") as file:
         data = pd.read_csv(file)
         return(data)
 
@@ -22,7 +22,7 @@ def process_changes():
     deleted = editor_state.get("deleted_rows",{})
 
 def maleta_viaje():
-    st.subheader("Lista Viaje")
+    st.subheader("Maleta Viaje")
     #df = reading_from_csv
     df = pd.read_csv("./data/maleta.csv")
     #st.dataframe(df)
@@ -46,9 +46,10 @@ def maleta_viaje():
 
     #Contar por pais grafico redondo 
 
-    df_count = df.groupby('proveedor').count().reset_index() 
-    fig = px.pie(df_count, values="producto", names="proveedor", title="Proveedor") 
+    df_count = df.groupby('Estado').count().reset_index() 
+    fig = px.pie(df_count, values="Nombre", names="Estado", title="Estado") 
     st.plotly_chart(fig)
 
 if __name__ == '__main__':
     maleta_viaje()
+

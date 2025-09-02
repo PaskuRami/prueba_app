@@ -31,10 +31,13 @@ def main():
         viaje.cargar_viaje()
     elif choice == "Maleta":
         maleta.maleta_viaje()
+    elif choice == "GLP Map":
+        streamlit_location.glp_maps()
     
 
 if __name__ == '__main__':
     main()
+
 
 
 

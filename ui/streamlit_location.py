@@ -37,4 +37,8 @@ for record in df.values:
 
 st_data = st_folium(m, width=725)
 
+if __name__ == '__main__':
+    glp_maps()
+
+
 

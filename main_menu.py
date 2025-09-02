@@ -21,7 +21,10 @@ def main_menu():
         cargar_partidos()
     elif choice == "Texto":
         app_texto()
+    elif choice == "GLP":
+        glp_map()
 
 if __name__ == '__main__':
     main_menu()
+
 

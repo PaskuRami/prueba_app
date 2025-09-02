@@ -3,6 +3,7 @@ from PIL import Image
 from ui import viaje
 from ui import texto
 from ui import maleta
+from ui import streamlit_location
 from auth.jwt_utils import generate_token, decode_token
 
 #Imagen logo pestaña navegación 
@@ -30,8 +31,10 @@ def main():
         viaje.cargar_viaje()
     elif choice == "Maleta":
         maleta.maleta_viaje()
+    
 
 if __name__ == '__main__':
     main()
+
 
 

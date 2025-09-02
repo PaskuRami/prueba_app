@@ -25,7 +25,7 @@ def glp_maps():
     folium.Marker([float(location_current["latitude"]),float(location_current["longitude"])], popup="Casa", tooltip="Ubicacion", icon=folium.Icon(color="blue", icon="star")).add_to(m)
 
     ## GLP
-    df = pd.read_csv('GLP.csv',sep='|')
+    df = pd.read_csv('./data/GLP.csv',sep='|')
 
     for record in df.values:
         #print(f"Valores {record[4]}, {record[5]}")
@@ -37,6 +37,7 @@ def glp_maps():
 
 if __name__ == '__main__':
     glp_maps()
+
 
 
 

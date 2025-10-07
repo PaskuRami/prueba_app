@@ -18,11 +18,11 @@ def login_page():
     if "auth_token" in st.session_state:
         token_data = decode_token(st.session_state["auth_token"])
         if token_data:
-            st.success(f"Active session: {token_data['username']} ({token_data['role']})")
+            #st.success(f"Active session: {token_data['username']} ({token_data['role']})")
             #Allows you to log out
-            if st.button("Log Out"):
-                del st.session_state["auth_token"]
-                st.rerun()
+            #if st.button("Log Out"):
+            #    del st.session_state["auth_token"]
+            #    st.rerun()
             #Redirects to the dashboard of the corresponding role
             if token_data["role"] == "admin":
                 dashboard.admin_dashboard()
@@ -48,6 +48,7 @@ def login_page():
                 st.rerun() #Reload to enter the active session
             else:
                 st.error("Incorrect username or password")
+
 
 
 

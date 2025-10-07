@@ -3,6 +3,7 @@ from PIL import Image
 from ui import viaje
 from ui import texto
 from ui import maleta
+from ui import loteria
 from ui import streamlit_location
 from auth.jwt_utils import generate_token, decode_token
 
@@ -15,7 +16,7 @@ st.set_page_config(page_title='Mi APP', page_icon=img, layout="wide", initial_si
 def main():
     st.title("Aplicacion principal")
     
-    menu=["Inicio","Viaje","Maleta","Conocenos","GLP Map"]
+    menu=["Inicio","Viaje","Maleta","Conocenos","GLP Map","Loteria"]
     token_data = decode_token(st.session_state["auth_token"])
     st.sidebar.success(f"Usuario: {token_data['username']} ({token_data['role']})")
     #Allows you to log out
@@ -33,10 +34,13 @@ def main():
         maleta.maleta_viaje()
     elif choice == "GLP Map":
         streamlit_location.glp_maps()
+    elif choice == "Loteria":
+        loteria.cargar_loteria()
     
 
 if __name__ == '__main__':
     main()
+
 
 
 

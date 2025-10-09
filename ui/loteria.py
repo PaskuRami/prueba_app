@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-#import plotly.express as px 
 
 #Escribir en archivo csv
 def writing_on_csv(dataDict):
@@ -38,11 +37,11 @@ def cargar_loteria():
     )
     st.button("Guardar", on_click=writing_on_csv, args=[edited_df])
 
-    #Contar por pais grafico redondo 
+    #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
 
-    #df_count = df.groupby('proveedor').count().reset_index() 
-    #fig = px.pie(df_count, values="producto", names="proveedor", title="Proveedor") 
-    #st.plotly_chart(fig)
+    df_count = df.groupby('precio').count().reset_index() 
+    fig = px.pie(df_count, values="unidades_navidad", names="precio", title="Dinero") 
+    st.plotly_chart(fig)
 
 if __name__ == '__main__':
     cargar_loteria()

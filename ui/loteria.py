@@ -38,7 +38,7 @@ def cargar_loteria():
     st.button("Guardar", on_click=writing_on_csv, args=[edited_df])
 
     count_precio = df['precio' ].sum()
-    st.title(count_precio)
+    st.title("Recaudacion: "count_precio)
 
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
 

@@ -37,6 +37,9 @@ def cargar_loteria():
     )
     st.button("Guardar", on_click=writing_on_csv, args=[edited_df])
 
+    count_precio = df.groupby('precio').count().reset_index()
+    st.title(count_precio)
+
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
 
     df_count = df.groupby('unidades_navidad').count().reset_index() 

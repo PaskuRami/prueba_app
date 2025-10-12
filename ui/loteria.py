@@ -40,9 +40,6 @@ def cargar_loteria():
     count_precio = df['precio' ].sum()
     st.info('Papeletas Navidad = 50, Papeletas Nino = 25', icon="ℹ️")
     st.write(f"Loteria Navidad: 150€, Loteria Nino: 75€, Total dinero papeletas: 225€, Total dinero recolectado: {count_precio}€")
-
-    fig_bar = px.bar(df, x='unidades_navidad', y='precio',title ="Loteria Navidad",text="Venta")
-    st.plotly_bar(fig_bar)
     
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
 

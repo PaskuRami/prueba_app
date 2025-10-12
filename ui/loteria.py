@@ -38,7 +38,7 @@ def cargar_loteria():
     st.button("Guardar", on_click=writing_on_csv, args=[edited_df])
 
     count_precio = df['precio' ].sum()
-    st.write(f"Total: {count_precio}\€")
+    st.write(f"Loteria Navidad: 100€, Loteria Nino: 50€, Total dinero papeletas: 150€, Total dinero recolectado: {count_precio}\€")
     
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
 

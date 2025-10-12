@@ -19,7 +19,7 @@ def main():
     if token_data:
         if token_data["role"] == "Gestion":
             menu=["Inicio","Viaje","Maleta","Conocenos","GLP Map","Loteria"]            
-        elif
+        elif token_data["role"] == "Gerencia":
             menu=["Inicio","GLP Map","Loteria"]
     st.sidebar.success(f"Usuario: {token_data['username']} ({token_data['role']})")
     #Allows you to log out
@@ -43,6 +43,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 

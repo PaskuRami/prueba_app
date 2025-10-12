@@ -15,8 +15,14 @@ st.set_page_config(page_title='Mi APP', page_icon=img, layout="wide", initial_si
 
 def main():
     st.title("Aplicacion principal")
+    if "auth_token" in st.session_state:
+        token_data = decode_token(st.session_state["auth_token"])
+        if token_data:
+            if token_data["role"] == "Gestion":
+                menu=["Inicio","Viaje","Maleta","Conocenos","GLP Map","Loteria"]            
+            elif
+                menu=["Inicio","GLP Map","Loteria"]
     
-    menu=["Inicio","Viaje","Maleta","Conocenos","GLP Map","Loteria"]
     token_data = decode_token(st.session_state["auth_token"])
     st.sidebar.success(f"Usuario: {token_data['username']} ({token_data['role']})")
     #Allows you to log out
@@ -40,6 +46,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 

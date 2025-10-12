@@ -46,9 +46,9 @@ def cargar_loteria():
     st.plotly_chart(fig3)
     
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
-
-    df_count = df.groupby('unidades_navidad').count().reset_index() 
-    fig = px.pie(df_count, values="unidades_navidad", names="precio", title="Loteria Navidad") 
+    df_sum_lotnav = df('unidades_navidad).sum()
+    df_sum_lotnino = df('unidades_nino).sum()
+    fig = px.pie(x=[df_sum_lotnav, df_sum_lotnino],y=["Loteria Navidad","Loteria Niño"]) 
     st.plotly_chart(fig)
 
     df_count2 = df.groupby('unidades_nino').count().reset_index() 

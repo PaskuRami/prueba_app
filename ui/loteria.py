@@ -41,19 +41,12 @@ def cargar_loteria():
     st.info('Papeletas Navidad = 50, Papeletas Nino = 25', icon="ℹ️")
     st.write(f"Loteria Navidad: 150€, Loteria Nino: 75€, Total dinero papeletas: 225€, Total dinero recolectado: {count_precio}€")
 
-    fig_count = df.groupby('unidades_navidad').count().reset_index() 
-    fig3 = px.bar(fig_count,"unidades_navidad",color="unidades_navidad",orientation="v")
-    st.plotly_chart(fig3)
-    
+       
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
-    df_sum_lotnav = df('unidades_navidad).sum()
-    df_sum_lotnino = df('unidades_nino).sum()
-    fig = px.pie(x=[df_sum_lotnav, df_sum_lotnino],y=["Loteria Navidad","Loteria Niño"]) 
+    df_sum_lotnav = df('unidades_navidad').sum()
+    df_sum_lotnino = df('unidades_nino').sum()
+    fig = px.bar(x=[df_sum_lotnav, df_sum_lotnino],y=["Loteria Navidad","Loteria Niño"]) 
     st.plotly_chart(fig)
-
-    df_count2 = df.groupby('unidades_nino').count().reset_index() 
-    fig2 = px.pie(df_count, values="unidades_nino", names="precio", title="Loteria Nino") 
-    st.plotly_chart(fig2)
 
 if __name__ == '__main__':
     cargar_loteria()

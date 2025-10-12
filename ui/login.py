@@ -26,7 +26,7 @@ def login_page():
             #Redirects to the dashboard of the corresponding role
             if token_data["role"] == "admin":
                 dashboard.admin_dashboard()
-            if token_data["role"] == "Gestion":
+            if token_data["role"] in ("Gestion","Gerencia") :
                 #st.info("Rol Gestion")
                 #viaje.cargar_viaje()
                 inicio.main()
@@ -48,6 +48,7 @@ def login_page():
                 st.rerun() #Reload to enter the active session
             else:
                 st.error("Incorrect username or password")
+
 
 
 

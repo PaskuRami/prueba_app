@@ -47,8 +47,8 @@ def cargar_loteria():
     df_sum_lotnino = df['unidades_nino'].sum()
     df_nav = df.groupby('unidades_navidad').sum().reset_index()
     
-    #fig = px.bar(df_nav,x='unidades_navidad',title='Ventas Navidad')
-    #st.plotly_chart(fig)
+    fig = px.bar(df_nav,x='unidades_navidad',title='Ventas Navidad')
+    st.plotly_chart(fig)
 
 if __name__ == '__main__':
     cargar_loteria()

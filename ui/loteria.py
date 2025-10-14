@@ -52,7 +52,7 @@ def cargar_loteria():
         fig = px.bar(df,x='unidades_navidad',y='unidades_navidad')
         # Añade el valor de la suma como anotación en la esquina del gráfico
         fig.update_layout(
-            title=f"Total loteria Navidad: {df_sum_lotnav}",
+            title=f"Total loteria Navidad: {df_sum_lotnav} papeletas",
             annotations=[
                 dict(
                     x=0.5,
@@ -70,7 +70,7 @@ def cargar_loteria():
         fig2 = px.bar(df,x='unidades_nino',y='unidades_nino')
         # Añade el valor de la suma como anotación en la esquina del gráfico
         fig2.update_layout(
-            title=f"Total loteria Niño: {df_sum_lotnino}",
+            title=f"Total loteria Niño: {df_sum_lotnino} papeletas",
             annotations=[
                 dict(
                     x=0.5,

@@ -48,6 +48,21 @@ def cargar_loteria():
     #df_nav = df.groupby('unidades_navidad').sum().reset_index()
     
     fig = px.bar(df,x='unidades_navidad',y='unidades_navidad')
+    # Añade el valor de la suma como anotación en la esquina del gráfico
+    fig.update_layout(
+        title=f"Total loteria Navidad: {df_sum_lotnav}",
+        annotations=[
+            dict(
+                x=0.5,
+                y=1.0,
+                xref='paper',
+                yref='paper',
+                text=f"Suma total: {df_sum_lotnav}",
+                showarrow=False,
+                font=dict(size=14)
+            )
+        ]
+    )
     st.plotly_chart(fig)
 
 if __name__ == '__main__':

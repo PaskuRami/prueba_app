@@ -45,25 +45,45 @@ def cargar_loteria():
     #Contar por unidades_navidad, unidades_nino, precio grafico redondo 
     df_sum_lotnav = df['unidades_navidad'].sum()
     df_sum_lotnino = df['unidades_nino'].sum()
-    #df_nav = df.groupby('unidades_navidad').sum().reset_index()
-    
-    fig = px.bar(df,x='unidades_navidad',y='unidades_navidad')
-    # Añade el valor de la suma como anotación en la esquina del gráfico
-    fig.update_layout(
-        title=f"Total loteria Navidad: {df_sum_lotnav}",
-        annotations=[
-            dict(
-                x=0.5,
-                y=1.0,
-                xref='paper',
-                yref='paper',
-                text=f"Suma total: {df_sum_lotnav}",
-                showarrow=False,
-                font=dict(size=14)
-            )
-        ]
-    )
-    st.plotly_chart(fig)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        fig = px.bar(df,x='unidades_navidad',y='unidades_navidad')
+        # Añade el valor de la suma como anotación en la esquina del gráfico
+        fig.update_layout(
+            title=f"Total loteria Navidad: {df_sum_lotnav}",
+            annotations=[
+                dict(
+                    x=0.5,
+                    y=1.0,
+                    xref='paper',
+                    yref='paper',
+                    text=f"Suma total: {df_sum_lotnav}",
+                    showarrow=False,
+                    font=dict(size=14)
+                )
+            ]
+        )
+        st.plotly_chart(fig)
+    with col2:
+        fig2 = px.bar(df,x='unidades_nino',y='unidades_nino')
+        # Añade el valor de la suma como anotación en la esquina del gráfico
+        fig2.update_layout(
+            title=f"Total loteria Niño: {df_sum_lotnino}",
+            annotations=[
+                dict(
+                    x=0.5,
+                    y=1.0,
+                    xref='paper',
+                    yref='paper',
+                    text=f"Suma total: {df_sum_lotnino}",
+                    showarrow=False,
+                    font=dict(size=14)
+                )
+            ]
+        )
+        st.plotly_chart(fig2)
 
 if __name__ == '__main__':
     cargar_loteria()

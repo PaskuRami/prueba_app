@@ -48,14 +48,11 @@ def cargar_loteria():
 
     col3, col4 = st.columns(2)
     with col3:
-        #df_count2 = df.groupby('cliente')['unidades_navidad'].sum()
         fig2 = px.pie(df, values="unidades_navidad", names="cliente", title="Papeletas Navidad")
         st.plotly_chart(fig2)
     with col4:
-        df_count3 = df.groupby('cliente')['unidades_nino'].apply(lambda x: (x > 0).sum()).reset_index()
-        fig3 = px.pie(df_count3, values="unidades_nino", names="cliente", title="Papeletas Nino")
+        fig3 = px.pie(df, values="unidades_nino", names="cliente", title="Papeletas Nino")
         st.plotly_chart(fig3)
-
     
     col1, col2 = st.columns(2)
 

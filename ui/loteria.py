@@ -21,7 +21,7 @@ def process_changes():
     deleted = editor_state.get("deleted_rows",{})
 
 def cargar_loteria():
-    st.subheader("Loteria")
+    st.subheader("Loteria 15676")
     #df = reading_from_csv
     df = pd.read_csv("./data/loteria.csv")
     #st.dataframe(df)

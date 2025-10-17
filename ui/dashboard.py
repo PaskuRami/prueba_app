@@ -23,6 +23,12 @@ def admin_dashboard():
     if not token_data or token_data.get("role") != "admin":
         st.error("You do not have permission to access this page.")
         st.stop()
+
+    st.sidebar.success(f"Usuario: {token_data['username']} ({token_data['role']})")
+    #Allows you to log out
+    if st.sidebar.button("Log Out"):
+        del st.session_state["auth_token"]
+        st.rerun()
     
     #Tabs to separate user and role management
     tab1, tab2 = st.tabs(["User Management", "Role management"])
@@ -93,4 +99,5 @@ def admin_dashboard():
 
         #Main call to execute the function
 if __name__ == "__main__":
+
     admin_dashboard()
